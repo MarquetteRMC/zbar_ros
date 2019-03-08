@@ -61,7 +61,7 @@ namespace zbar_ros
     if (!camera_sub_ && barcode_pub_.getNumSubscribers() > 0)
     {
       NODELET_INFO("Connecting to camera topic.");
-      camera_sub_ = nh_.subscribe("image", 10, &BarcodeReaderNodelet::imageCb, this);
+      camera_sub_ = nh_.subscribe("/camera/rgb/image_raw", 10, &BarcodeReaderNodelet::imageCb, this);
     }
   }
 
